@@ -1,4 +1,4 @@
-Drag&Drop the ISO onto the batch
+Drag&Drop the ISO or Folder onto the batch
 
 Tested with:
 
