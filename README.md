@@ -1,1 +1,1 @@
-# vlc_play_uhd_iso_with_menu
+Drag&Drop the ISO on batch
