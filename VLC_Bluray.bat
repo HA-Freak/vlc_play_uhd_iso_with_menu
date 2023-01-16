@@ -1,2 +1,2 @@
-powershell -command "Mount-DiskImage -ImagePath '%~f1';$Letter = (Get-DiskImage '%~f1' | Get-Volume).DriveLetter;$args = 'bluray:///' + $Letter + ':/.';Start-Process -FilePath 'C:\Program Files\VideoLAN\VLC\vlc.exe' -ArgumentList $args -Wait;Dismount-DiskImage -ImagePath '%~f1';"
+powershell -command "$esc_file_path = [uri]::EscapeUriString('%~f1');$args = 'bluray:///' + $esc_file_path;Start-Process -FilePath 'C:\Program Files\VideoLAN\VLC\vlc.exe' -ArgumentList $args;"
 exit
