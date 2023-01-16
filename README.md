@@ -1,1 +1,1 @@
-Drag&Drop the ISO on batch
+Drag&Drop the ISO onto the batch
