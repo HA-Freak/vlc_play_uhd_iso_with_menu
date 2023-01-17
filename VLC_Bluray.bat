@@ -1,2 +1,1 @@
 powershell -command "try{$VlcPath = Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\VideoLAN\VLC' -Name InstallDir -ErrorAction Stop}catch [System.Exception]{$VlcPath = Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\WOW6432Node\VideoLAN\VLC' -Name InstallDir};$esc_file_path = [uri]::EscapeUriString('%~f1');$VlcExe = $VlcPath + '\vlc.exe';$args = 'bluray:///' + $esc_file_path;Start-Process -FilePath $VlcExe -ArgumentList $args;"
-pause
