@@ -1,4 +1,4 @@
-<# : B
+<# : #
 @echo off && setlocal && cd %~dp0 && powershell -nol -nop -ex bypass -c "iex $($PSScriptName='%~nx0';$DnDFile='%~f1';type '%~dpf0' -raw)" && endlocal && goto:eof
 #>
 $PSScriptRoot = (gl).Path
