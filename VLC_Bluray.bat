@@ -1,7 +1,5 @@
 <# : B
-@echo off && setlocal && cd %~dp0
-powershell -nol -nop -ex bypass -c "iex $($PSScriptName='%~nx0';$file='%~f1';type '%~dpf0' -raw)"
-endlocal && goto:eof
+@echo off && setlocal && cd %~dp0 && powershell -nol -nop -ex bypass -c "iex $($PSScriptName='%~nx0';$DnDFile='%~f1';type '%~dpf0' -raw)" && endlocal && goto:eof
 #>
 $PSScriptRoot = (gl).Path
 try{
@@ -9,7 +7,7 @@ try{
 }catch [System.Exception]{
 	$VlcPath = Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\WOW6432Node\VideoLAN\VLC' -Name InstallDir
 }
-$esc_file_path = [uri]::EscapeUriString($file)
+$EscFilePath = [uri]::EscapeUriString($DnDFile)
 $VlcExe = $VlcPath + '\vlc.exe'
-$args = 'bluray:///' + $esc_file_path
-Start-Process -FilePath $VlcExe -ArgumentList $args
+$Args = 'bluray:///' + $EscFilePath
+Start-Process -FilePath $VlcExe -ArgumentList $Args
