@@ -4,4 +4,4 @@ Tested with:
 
 Java 8.0.4310.10 (64-bit)
 
-VLC 3.0.21
+VLC 3.0.21 (64-bit)
